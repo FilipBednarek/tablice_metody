@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="forEach">forEach</button>
+    <button id="map">map</button>
+    <button id="filter">filter</button>
+    <button id="reduce">reduce</button>
+    <div id="dis"></div>
+
+    <script>
+        array = [1,2,3,4,5,6,7,8,9,10,11]
+        const forEach = document.querySelector("#forEach")
+        const map = document.querySelector("#map")
+        const filter = document.querySelector("#filter")
+        const reduce = document.querySelector("#reduce")
+        const dis = document.querySelector("#dis")
+        let i = 0;
+
+            forEach.addEventListener('click', function(){
+                array.forEach(element => {
+                        i++;
+                        dis.innerHTML += `<li> elem nr${i} to ${element} </li>`
+            })
+        })
+
+            map.addEventListener('click', function(){
+                array.map(element => {
+                    i++;
+                    dis.innerHTML += `<li> elem nr${i} to ${element * 2} </li>`
+                })
+            })
+
+            filter.addEventListener('click', function(){
+                for (let i = 0; i < array.length; i++) {
+                    const element = array[i];
+                    if(array.filter(el => el % 2 === 0)){
+                        console.log(`elementy parzystej to ${element} </li>`)
+
+                    }
+                }
+            })
+
+    </script>
+</body>
+</html>
